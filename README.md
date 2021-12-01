@@ -23,4 +23,5 @@ Javascript \
 HTML5/CSS \
 Mongo DB \
 Mongoose \
-Express
+Express \
+Indexed DB
