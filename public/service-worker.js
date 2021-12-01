@@ -1,4 +1,4 @@
-// const { useIndexedDb } = require('/indexedDb.js') 
+
 
 //saving to cache on immediate load every time
 const FILES_TO_CACHE = [
@@ -60,8 +60,7 @@ self.addEventListener("fetch", function (evt) {
             // If the response was good, clone it and store it in the cache.
             if (response.status === 200) {
               cache.put(evt.request.url, response.clone());
-              // let obj = response.clone();
-              // useIndexedDb("transactions", "TransactionStore", "post", obj);
+            
             }
 
             return response;
@@ -76,8 +75,7 @@ self.addEventListener("fetch", function (evt) {
     return;
   }
 
-  // if the request is not for the API, serve static assets using "offline-first" approach.
-  // see https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#cache-falling-back-to-network
+
   evt.respondWith(
     caches.open(CACHE_NAME).then(cache => {
       return cache.match(evt.request).then(response => {

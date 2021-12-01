@@ -1,8 +1,8 @@
-// const  { useIndexedDb }  = require("./indexedDb") ;
+
 
 let transactions = [];
 let myChart;
-// let offlinePushes = []
+
 
 fetch("/api/transaction")
   .then(response => {
@@ -111,18 +111,7 @@ function sendTransaction(isAdding) {
 
   // add to beginning of current array of data
   transactions.unshift(transaction);
-  //WORK IN PROGRESS<------------------------------------------------------------
-  //trying to retrieve indexdb store data and compare to transactions array, if 
-  //indexedDb._id does not matches transactions._id, post to mongo db 
-  // function offlinePostsToMongo() {
-  //   useIndexedDb("Transactions", "transactionStore", "get")
-  //   .then(results => {
-  //     const indexDbGet = results;
-  //   })
-
-  // };
-  // useIndexedDb("Transactions", "transactionStore", "put")
-  // re-run logic to populate ui with new record
+  
   populateChart();
   populateTable();
   populateTotal();
@@ -153,13 +142,7 @@ function sendTransaction(isAdding) {
       // fetch failed, so save in indexed db
       saveRecord(transaction);
 
-      // useIndexedDb("Transactions", "transactionStore", "put", transaction);
-      // console.log(transaction, "saved to indexedDb")
-      // function saveRecord(cacheObj){
-
-      // }
-
-      // clear form
+     
       nameEl.value = "";
       amountEl.value = "";
     });

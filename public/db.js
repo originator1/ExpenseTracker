@@ -1,7 +1,7 @@
 let db;
 let transactionVersion;
 
-// Create a new db request for a "budget" database.
+// Create a new db request 
 const request = indexedDB.open('TransactionDB', transactionVersion || 21);
 
 request.onupgradeneeded = function (e) {
