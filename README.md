@@ -4,7 +4,7 @@ James Garinger \
 Version: 1.0 \
 Created: 11/30/21 \
 [Github Repo](https://github.com/originator1/ExpenseTracker) \
-[Deployed App](https://shielded-crag-20600.herokuapp.com/) 
+[Deployed App](https://afternoon-peak-77835.herokuapp.com/) 
 
 track deposits and withdrawals to a created account, even when offline! Using service workers and indexed DB to store and track data to process when connection comes back online.
 
